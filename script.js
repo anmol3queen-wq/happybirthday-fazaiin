@@ -1,12 +1,18 @@
-const button = document.getElementById("heartBtn");
+const heartBtn = document.getElementById("heartBtn");
 const letter = document.getElementById("letter");
 
-button.addEventListener("click", () => {
-  letter.classList.toggle("hidden");
+heartBtn.addEventListener("click", () => {
 
-  if(letter.classList.contains("hidden")){
-      button.innerHTML = "💌 Open My Heart";
-  }else{
-      button.innerHTML = "❤️ Close Letter";
-  }
+    if(letter.classList.contains("hidden")){
+
+        letter.classList.remove("hidden");
+        heartBtn.innerHTML = "🤍 Close Letter";
+
+    }else{
+
+        letter.classList.add("hidden");
+        heartBtn.innerHTML = "💌 Open My Heart";
+
+    }
+
 });
