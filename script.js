@@ -1,18 +1,19 @@
-const heartBtn = document.getElementById("heartBtn");
+const button = document.getElementById("openBtn");
 const letter = document.getElementById("letter");
+const music = document.getElementById("music");
 
-heartBtn.addEventListener("click", () => {
+button.addEventListener("click", () => {
+
+    letter.classList.toggle("hidden");
 
     if(letter.classList.contains("hidden")){
-
-        letter.classList.remove("hidden");
-        heartBtn.innerHTML = "🤍 Close Letter";
-
+        button.innerHTML="💌 Open My Heart";
     }else{
+        button.innerHTML="🤍 Close Letter";
+    }
 
-        letter.classList.add("hidden");
-        heartBtn.innerHTML = "💌 Open My Heart";
-
+    if(music.paused){
+        music.play().catch(()=>{});
     }
 
 });
